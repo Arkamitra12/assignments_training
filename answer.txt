@@ -1,0 +1,3 @@
+urban_mobility.csv-Structured data:Data is arranged in rows and coloumns with fixed coloumn
+equipment_events.json-semi_structured data:data uses keys,values,nested objects and arrays
+coastal_monitoring_log.txt-unstructured data: Data is stored as ordinary text sentences without a tabular structure
