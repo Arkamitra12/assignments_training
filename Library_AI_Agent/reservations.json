@@ -1,0 +1,18 @@
+[
+    {
+        "reservation_id": "664e0fb4-9649-428a-8376-711419a60b70",
+        "book_id": 101,
+        "book_title": "Python Crash Course",
+        "customer_name": "Ahmed",
+        "reservation_date": "2026-11-04 16:28:48",
+        "status": "Confirmed"
+    },
+    {
+        "reservation_id": "18c90f51-3619-4c4e-9397-233e27695ed9",
+        "book_id": 101,
+        "book_title": "Python Crash Course",
+        "customer_name": "Ahmed",
+        "reservation_date": "2026-11-04 16:58:08",
+        "status": "Confirmed"
+    }
+]
