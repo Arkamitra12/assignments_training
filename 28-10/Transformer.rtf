@@ -1,0 +1,192 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset0 Calibri;}{\f1\fnil\fcharset1 Cambria Math;}{\f2\fnil\fcharset0 Cambria Math;}{\f3\fnil\fcharset1 Segoe UI Symbol;}{\f4\fnil\fcharset2 Symbol;}}
+{\*\generator Riched20 10.0.19041}{\*\mmathPr\mmathFont1\mwrapIndent1440 }\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\qc\ul\b\f0\fs22\lang9 TRANSFORMER\par
+
+\pard\sa200\sl276\slmult1\ulnone\b0 The Transformer is the core deep learning architecture behind most modern Generative AI models, including GPT, ChatGPT, BERT, Gemini, Claude, Codex, and many image-generation models. Introduced by Google researchers in 2017 through the paper "Attention Is All You Need", the Transformer revolutionized AI by enabling models to understand relationships between words, sentences, and data more effectively than previous architectures such as RNNs and LSTMs. Its ability to process large amounts of data in parallel and capture long-range dependencies makes it the foundation of today's Generative AI systems.\par
+\b\fs24 What is a Transformer?\par
+\b0 A Transformer is a neural network architecture designed to process sequential data, such as text, by understanding the context and relationships between different elements in a sequence. Instead of processing information one word at a time, it analyzes all words simultaneously and determines which words are most relevant to each other.\par
+For example, in the sentence:\par
+"The animal didn't cross the road because it was tired."\par
+The Transformer understands that the word "it" refers to "the animal", not the road. This contextual understanding is achieved through a mechanism called Attention.\par
+\b Why Were Transformers Needed?\par
+Before Transformers, AI models mainly used:\par
+\par
+\b0 1. Recurrent Neural Networks (RNNs)\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Process words sequentially.\par
+{\pntext\f4\'B7\tab}Slow for large datasets.\par
+{\pntext\f4\'B7\tab}Struggle to remember information from earlier parts of long sentences.\par
+
+\pard\sa200\sl276\slmult1 2. Long Short-Term Memory Networks (LSTMs)\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Improved memory compared to RNNs.\par
+{\pntext\f4\'B7\tab}Still process data one step at a time.\par
+{\pntext\f4\'B7\tab}Difficult to scale for very large models.\par
+
+\pard\sa200\sl276\slmult1\b Limitations\b0\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Slow training.\par
+{\pntext\f4\'B7\tab}Poor handling of very long contexts.\par
+{\pntext\f4\'B7\tab}Limited parallel processing.\par
+{\pntext\f4\'B7\tab}Transformers solved these issues by introducing self-attention and parallel computation.\par
+
+\pard\sa200\sl276\slmult1\b\fs28 Key Components of a Transformer\par
+\fs24 1. Input Embeddings\b0\par
+Computers cannot directly understand words. Therefore, words are converted into numerical vectors called embeddings.Key Components of a Transformer\par
+\b 2. Positional Encoding\par
+\b0 Since Transformers process all words simultaneously, they need information about word order.\par
+Example:\par
+"Dog bites man"\par
+"Man bites dog"\par
+Same words, different meanings.\par
+Positional Encoding adds position information to each word embedding so the model understands sequence order.\par
+\b 3. Self-Attention Mechanism\b0\par
+This is the most important innovation of the Transformer.\par
+Self-attention allows each word to determine which other words in the sentence are important for understanding its meaning.\par
+Example\par
+Sentence:\par
+"The cat sat on the mat because it was comfortable."\par
+When analyzing "it", the model pays more attention to "mat" than other words.\par
+\ul\b Benefits\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\ulnone\b0 Understands context.\par
+{\pntext\f4\'B7\tab}Captures long-range relationships.\par
+{\pntext\f4\'B7\tab}Improves language understanding.\par
+
+\pard\sa200\sl276\slmult1\b 4. Query, Key and Value (Q, K, V)\par
+\b0 To perform attention, each word generates three vectors:\par
+Query (Q)\par
+What information am I looking for?\par
+Key (K)\par
+What information do I contain?\par
+Value (V)\par
+What information should I pass on?\par
+The model compares Queries and Keys to determine attention scores and then uses Values to build contextual understanding.\par
+\b 5. Multi-Head Attention\b0\par
+Instead of using a single attention mechanism, Transformers use multiple attention heads.\par
+Each head focuses on different relationships:\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Grammar\par
+{\pntext\f4\'B7\tab}Context\par
+{\pntext\f4\'B7\tab}Meaning\par
+{\pntext\f4\'B7\tab}Sentence structure\par
+{\pntext\f4\'B7\tab}Semantic similarity\par
+
+\pard\sa200\sl276\slmult1\b 6. Feed Forward Neural Network\par
+\b0 After attention processing, the data passes through fully connected neural network layers.\par
+Functions:\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Extract higher-level features.\par
+{\pntext\f4\'B7\tab}Perform complex transformations.\par
+{\pntext\f4\'B7\tab}Improve prediction quality.\par
+
+\pard\sa200\sl276\slmult1\b 7. Layer Normalization and Residual Connections\par
+\b0 These components help:\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Stabilize training.\par
+{\pntext\f4\'B7\tab}Prevent information loss.\par
+{\pntext\f4\'B7\tab}Speed up convergence.\par
+{\pntext\f4\'B7\tab}Enable very deep Transformer networks.\par
+
+\pard\sa200\sl276\slmult1\ul\b\fs28 Transformer Architecture\ulnone\b0\fs24\par
+A Transformer consists of two main parts:\par
+\b Encoder\b0\par
+Responsible for understanding the input.\par
+\ul Functions:\ulnone\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Reads input text.\par
+{\pntext\f4\'B7\tab}Learns context.\par
+{\pntext\f4\'B7\tab}Generates contextual representations.\par
+
+\pard\sa200\sl276\slmult1\ul Used in:\ulnone\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 BERT\par
+{\pntext\f4\'B7\tab}RoBERTa\par
+{\pntext\f4\'B7\tab}T5 (Encoder side)\par
+
+\pard\sa200\sl276\slmult1\b\fs28 Decoder\par
+\b0\fs24 Responsible for generating output.\par
+\ul Functions:\ulnone\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 Predicts next token.\par
+{\pntext\f4\'B7\tab}Generates text sequentially.\par
+
+\pard\sa200\sl276\slmult1\ul Used in:\ulnone\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1 GPT\par
+{\pntext\f4\'B7\tab}ChatGPT\par
+{\pntext\f4\'B7\tab}Codex\par
+
+\pard\sa200\sl276\slmult1\b Working Flow\b0\par
+
+\pard\sa200\sl276\slmult1\qc Plain Text\par
+Input Text\par
+\f1\u8595?\f0\par
+Word Embeddings\par
+\f1\u8595?\f0\par
+Positional Encoding\par
+\f1\u8595?\f0\par
+Multi-Head Attention\par
+\f1\u8595?\f0\par
+Feed Forward Network\par
+\f1\u8595?\f0\par
+Encoder/Decoder Layers\par
+\f1\u8595?\f0\par
+Output Generation\par
+\f1\u8595?\f0\par
+Generated Text\par
+
+\pard\sa200\sl276\slmult1\b How Transformers Power Generative AI\par
+\b0 Generative AI models use Transformers to predict the most likely next token.\par
+Example:\par
+Input:\par
+"Artificial Intelligence is"\par
+Prediction:\par
+"transforming"\par
+Next prediction:\par
+"the"\par
+Next prediction:\par
+"world"\par
+The model generates one token at a time, producing coherent text, code, or images.\par
+\par
+\b Applications of Transformers in Gen-AI\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\b0 Text Generation\par
+{\pntext\f4\'B7\tab}ChatGPT\par
+{\pntext\f4\'B7\tab}GPT-4\par
+{\pntext\f4\'B7\tab}Claude\par
+{\pntext\f4\'B7\tab}Gemini\par
+
+\pard\sa200\sl276\slmult1\ul\b\fs28 Pre\f2 -\f0 training\f2  \f0 vs\f2  \f0 Fine\f2 -\f0 tuning\f2  \f0 in\f2  \f0 Generative\f2  \f0 AI\ulnone\b0\par
+
+\pard\sa200\sl276\slmult1\qj\fs24 Large\f2  \f0 Language\f2  \f0 Models\f2  (\f0 LLMs\f2 ) \f0 such\f2  \f0 as\f2  \f0 GPT\f2 , \f0 Gemini\f2 , \f0 and\f2  \f0 Claude\f2  \f0 are\f2  \f0 typically\f2  \f0 developed\f2  \f0 in\f2  \f0 two\f2  \f0 major\f2  \f0 stages\f2 : \f0 Pre\f2 -\f0 training\f2  \f0 and\f2  \f0 Fine\f2 -\f0 tuning\f2 . \f0 Pre\f2 -\f0 training\f2  \f0 helps\f2  \f0 the\f2  \f0 model\f2  \f0 learn\f2  \f0 general\f2  \f0 language\f2  \f0 patterns\f2  \f0 and\f2  \f0 knowledge\f2  \f0 from\f2  \f0 massive\f2  \f0 datasets\f2 , \f0 while\f2  \f0 fine\f2 -\f0 tuning\f2  \f0 specializes\f2  \f0 the\f2  \f0 model\f2  \f0 for\f2  \f0 specific\f2  \f0 tasks\f2 , \f0 domains\f2 , \f0 or\f2  \f0 business\f2  \f0 requirements\f2 . \f0 Together\f2 , \f0 these\f2  \f0 stages\f2  \f0 enable\f2  \f0 Generative\f2  \f0 AI\f2  \f0 systems\f2  \f0 to\f2  \f0 produce\f2  \f0 accurate\f2 , \f0 context\f2 -\f0 aware\f2 , \f0 and\f2  \f0 useful\f2  \f0 outputs\f2 .\par
+\b 1. What is Pre-training?\b0\par
+Pre-training is the first phase of building an AI model, where the model learns from a very large dataset containing books, websites, articles, code repositories, and other publicly available text.\par
+During this stage, the model learns:\par
+
+\pard{\pntext\f4\'B7\tab}{\*\pn\pnlvlblt\pnf4\pnindent0{\pntxtb\'B7}}\fi-360\li720\sa200\sl276\slmult1\qj Grammar and language structure\par
+{\pntext\f4\'B7\tab}Facts and general knowledge\par
+{\pntext\f4\'B7\tab}Relationships between words\par
+{\pntext\f4\'B7\tab}Context understanding\par
+{\pntext\f4\'B7\tab}Reasoning patterns\par
+
+\pard\sa200\sl276\slmult1\qj The model is trained to predict the next word (or token) in a sentence.\par
+\b Characteristics of Pre-training\par
+\b0\f3\u9989?\f2  Uses massive datasets\par
+\f3\u9989?\f2  Requires enormous computing power\par
+\f3\u9989?\f2  Takes weeks or months of training\par
+\f3\u9989?\f2  Produces a general-purpose model\par
+\f3\u9989?\f2  Learns broad knowledge but not task-specific expertise\par
+\b 2. What is Fine-tuning?\par
+\b0 Fine-tuning is the second stage, where a pre-trained model is further trained on a smaller, specialized dataset to improve performance for a particular task or domain.\par
+The goal is to adapt the model to specific requirements.\par
+\b Characteristics of Fine-tuning\b0\par
+\f3\u9989?\f2  Uses smaller specialized datasets\par
+\f3\u9989?\f2  Less computational cost\par
+\f3\u9989?\f2  Improves task-specific accuracy\par
+\f3\u9989?\f2  Adapts model to business needs\par
+\f3\u9989?\f2  Makes responses more relevant and domain-focused.\par
+\par
+\f3\par
+}
+ 
